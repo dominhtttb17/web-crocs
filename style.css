@@ -1012,6 +1012,12 @@ footer .copyright .end {
     transition: transform 80ms ease-in;
 }
 
+.lg-form button:hover {
+    cursor: pointer;
+    background-color: #eb2424;
+    color: #ffffff;
+}
+
 .lg-form button:active {
     transform: scale(0.95);
 }
