@@ -120,8 +120,15 @@
             <input type="email" placeholder="Email">
             <input type="text" placeholder="Subject">
             <textarea name="" id="" cols="30" rows="10" placeholder="Your Name"></textarea>
-            <button class="normal">Submit</button>
+            <button class="normal" onclick="openPopup()">Submit</button>
         </form>
+
+        <div class="popup" id="popup">
+            <img src="image/logo/tick.png" alt="">
+            <h2>Thank you</h2>
+            <p>Your details has been succesfully submitted. Thanks!</p>
+            <button type="button" onclick="closePopup()">Ok</button>
+        </div>
 
         <div class="map">
             <h3 style="font-size: 25px; text-align: center; padding-bottom: 10px;">Map</h3>
@@ -177,6 +184,18 @@
             <p class="end">© 2023 Design by <span><i class="fa-solid fa-face-grin"></i> Le Thi Ngoc Anh</span></p>
         </div>
     </footer>
+    <!--  Gửi Feedback giả -->
+    <script>
+        let popup = document.getElementById('popup');
+
+        function openPopup() {
+            popup.classList.add('open-popup')
+        }
+
+        function closePopup() {
+            popup.classList.remove('open-popup')
+        }
+    </script>
 
     <script src="style.js"></script>
 </body>

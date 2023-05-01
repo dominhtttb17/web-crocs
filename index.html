@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/110/110774.png" type="image/x-icon">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -36,9 +38,18 @@
     </section>
 
     <!-- BANNER CHÍNH-->
-    <section id="slideshows">
-        <div class="wrapper">
-            <img src="image/banners/banner_0.png" class="banner_imgs" alt="">
+    <section id="slideshowss">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image/banners/banner_0.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/banners/banner_1.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/banners/banner_2.png" alt=""></div>
+                <div class="swiper-slide"><img src="image/banners/banner_17.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="image/banners/banner_18.jpg" alt=""></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -401,7 +412,52 @@
         </div>
     </footer>
 
+    <div id="backtop">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
     <script src="style.js"></script>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop()) {
+                $('#backtop').fadeIn();
+            } else {
+                $('#backtop').fadeOut();
+            }
+        });
+        $("#backtop").click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 400)
+        })
+    });
+</script>
 
 </html>
